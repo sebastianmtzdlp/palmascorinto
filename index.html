@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Palmascorinto · Avance de obra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Palmascorinto</h1>
+    <span class="subtitle">Evidencias y avance de obra</span>
+  </header>
+
+  <main>
+    <!-- Vista de acceso -->
+    <section id="login-view" class="panel narrow" hidden>
+      <h2>Entrar</h2>
+      <form id="login-form">
+        <label>Correo <input name="email" type="email" required autocomplete="username"></label>
+        <label>Contraseña <input name="password" type="password" required autocomplete="current-password"></label>
+        <button type="submit">Entrar</button>
+        <p id="login-msg" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- Vista principal -->
+    <section id="app-view" hidden>
+      <div class="bar">
+        <span id="user-email"></span>
+        <button id="logout-btn" class="ghost" type="button">Salir</button>
+      </div>
+
+      <section class="panel">
+        <h2>Avance por área</h2>
+        <div id="summary"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Subir evidencia o reporte</h2>
+        <form id="entry-form">
+          <div class="row">
+            <label>Tipo
+              <select name="kind" required>
+                <option value="evidencia">Evidencia (fotos, videos, documentos)</option>
+                <option value="reporte">Reporte de avance</option>
+              </select>
+            </label>
+            <label>Fecha
+              <input name="taken_on" type="date">
+            </label>
+          </div>
+          <div class="row">
+            <label>Área
+              <input name="area" list="areas" required placeholder="Ej. Baño">
+            </label>
+            <label>Título
+              <input name="title" required placeholder="Ej. Colocación de azulejo">
+            </label>
+          </div>
+          <datalist id="areas">
+            <option value="General"></option>
+            <option value="Cocina"></option>
+            <option value="Baño"></option>
+            <option value="Sala"></option>
+            <option value="Recámara"></option>
+            <option value="Instalación eléctrica"></option>
+            <option value="Plomería"></option>
+            <option value="Acabados"></option>
+            <option value="Pisos"></option>
+          </datalist>
+          <label>Descripción
+            <textarea name="description" rows="2"></textarea>
+          </label>
+          <div class="row">
+            <label>% de avance del área (solo reportes)
+              <input name="progress_pct" type="number" min="0" max="100" placeholder="0 - 100">
+            </label>
+            <label>Pendientes
+              <input name="pendientes" placeholder="Qué falta">
+            </label>
+          </div>
+          <label>Archivos
+            <input name="files" type="file" multiple accept="image/*,video/*,application/pdf">
+          </label>
+          <button type="submit">Guardar</button>
+          <p id="form-msg" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="bar">
+          <h2>Registros</h2>
+          <div class="filters">
+            <select id="filter-area"><option value="">Todas las áreas</option></select>
+            <select id="filter-kind">
+              <option value="">Todo</option>
+              <option value="evidencia">Evidencias</option>
+              <option value="reporte">Reportes</option>
+            </select>
+          </div>
+        </div>
+        <div id="entries"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

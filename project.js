@@ -54,9 +54,9 @@ window.PROJECT = {
 
   // Contacto: llena al menos uno. whatsapp en formato internacional sin signos, ej. '5215512345678'
   contact: {
-    whatsapp: '',
+    whatsapp: '525581086377',
     email: '',
-    message: 'Hola, me interesa Palmascorinto. ¿Me pueden dar información?',
+    message: 'Quiero información',
   },
 
   // Áreas que se siguen en la obra. El avance sale del último reporte de cada una.

@@ -41,9 +41,11 @@ CNAME               Dominio personalizado
 - `type`: `image/jpeg`, `image/png`, `video/mp4` o `application/pdf`.
 - El avance por área toma el reporte más reciente de cada área.
 
-## Fases y áreas
+## Contenido de la página (project.js)
 
-Edita `project.js`: áreas, fechas y el estado de cada fase (`pendiente`, `en curso`, `terminada`).
+Todo el texto de la portada, unidades, plan de pago, galería, contacto, áreas y fases se edita en `project.js`.
+Lo que dice "ejemplo" es de relleno. Con `sample: false` desaparece la franja "Vista de ejemplo".
+Las fotos de ejemplo están en `assets/ejemplo/` (de Unsplash, ver `CREDITOS.txt`); reemplázalas por fotos reales.
 
 ## Privacidad
 

@@ -4,47 +4,111 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Palmascorinto · Avance de obra</title>
+  <title>Palmascorinto · Preventa</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top">
-    <h1>Palmascorinto</h1>
-    <span class="subtitle">Evidencias y avance de obra</span>
+  <div id="sample-strip" class="sample-strip" hidden>Vista de ejemplo · fotos y datos ilustrativos</div>
+
+  <nav class="nav" id="nav">
+    <a class="brand" href="#inicio">Palmascorinto</a>
+    <div class="nav-links">
+      <a href="#proyecto">Proyecto</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#galeria">Galería</a>
+      <a href="#avance">Avance de obra</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <img id="hero-img" class="hero-img" alt="">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <span class="badge" id="hero-badge"></span>
+      <h1 id="hero-title"></h1>
+      <p class="hero-sub" id="hero-sub"></p>
+      <a class="btn" id="hero-cta" href="#contacto"></a>
+      <div class="stats" id="hero-stats"></div>
+    </div>
   </header>
 
   <main>
-    <section class="panel">
-      <h2 id="project-name">Proyecto</h2>
-      <p id="project-desc" class="muted"></p>
-      <div class="overall">
-        <div class="overall-num"><span id="overall-pct">0%</span><small>avance general</small></div>
-        <div class="overall-info">
-          <div class="bar big"><div id="overall-bar" style="width:0%"></div></div>
-          <p id="project-dates" class="muted"></p>
-        </div>
-      </div>
-      <h3>Fases</h3>
-      <ol id="phases" class="phases"></ol>
-      <h3>Avance por área</h3>
-      <div id="summary"></div>
+    <section class="section" id="proyecto">
+      <p class="eyebrow">El proyecto</p>
+      <h2>Lo que hace especial a Palmascorinto</h2>
+      <div class="cards3" id="highlights"></div>
     </section>
 
-    <section class="panel">
-      <div class="toolbar">
-        <h2>Registros</h2>
-        <div class="filters">
-          <select id="filter-area"><option value="">Todas las áreas</option></select>
-          <select id="filter-kind">
-            <option value="">Todo</option>
-            <option value="evidencia">Evidencias</option>
-            <option value="reporte">Reportes</option>
-          </select>
+    <section class="section alt" id="unidades">
+      <p class="eyebrow">Unidades</p>
+      <h2>Elige tu departamento</h2>
+      <div class="units" id="units"></div>
+      <p class="fine" id="price-note"></p>
+
+      <h3 class="sub">Plan de pago</h3>
+      <div class="cards3" id="payment"></div>
+    </section>
+
+    <section class="section" id="galeria">
+      <p class="eyebrow">Galería</p>
+      <h2>Conoce los espacios</h2>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="section alt" id="avance">
+      <p class="eyebrow">Avance de obra</p>
+      <h2>Sigue la obra paso a paso</h2>
+      <p class="muted" id="project-desc"></p>
+
+      <div class="panel">
+        <div class="overall">
+          <div class="overall-num"><span id="overall-pct">0%</span><small>avance general</small></div>
+          <div class="overall-info">
+            <div class="bar big"><div id="overall-bar" style="width:0%"></div></div>
+            <p id="project-dates" class="muted"></p>
+          </div>
         </div>
+        <h3>Fases</h3>
+        <ol id="phases" class="phases"></ol>
+        <h3>Avance por área</h3>
+        <div id="summary"></div>
       </div>
-      <div id="entries"></div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <h3>Registros</h3>
+          <div class="filters">
+            <select id="filter-area" aria-label="Filtrar por área"><option value="">Todas las áreas</option></select>
+            <select id="filter-kind" aria-label="Filtrar por tipo">
+              <option value="">Todo</option>
+              <option value="evidencia">Evidencias</option>
+              <option value="reporte">Reportes</option>
+            </select>
+          </div>
+        </div>
+        <div id="entries"></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <p class="eyebrow">Contacto</p>
+      <h2>¿Quieres más información?</h2>
+      <p class="muted">Escríbenos y te contamos disponibilidad, precios y fechas de visita.</p>
+      <div class="contact-actions" id="contact-actions"></div>
     </section>
   </main>
+
+  <footer class="footer">
+    <span>© Palmascorinto</span>
+    <span id="footer-credit" class="fine"></span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lb-close" id="lb-close" aria-label="Cerrar">✕</button>
+    <img id="lb-img" alt="">
+    <p id="lb-cap"></p>
+  </div>
 
   <script src="project.js"></script>
   <script src="app.js"></script>

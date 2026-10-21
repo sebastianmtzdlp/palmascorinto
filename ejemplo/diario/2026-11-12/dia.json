@@ -1,0 +1,12 @@
+{
+ "fecha": "2026-11-12",
+ "resumen": "Jornada de ejemplo.",
+ "personal": {
+  "Albañilería": 3,
+  "Electricidad": 2,
+  "Plomería": 1,
+  "Carpintería": 1,
+  "Ayudantes": 2,
+  "Supervisión": 1
+ }
+}

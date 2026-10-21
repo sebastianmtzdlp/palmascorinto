@@ -1,0 +1,46 @@
+{
+ "fecha": "2026-11-07",
+ "resumen": "Jornada de ejemplo.",
+ "personal": {
+  "Albañilería": 1,
+  "Electricidad": 1,
+  "Plomería": 1,
+  "Carpintería": 0,
+  "Ayudantes": 1,
+  "Supervisión": 1
+ },
+ "areas": {
+  "Instalación eléctrica": {
+   "pct": 10,
+   "nota": "Canalización iniciada."
+  },
+  "Cocina": {
+   "pct": 8,
+   "nota": "Medidas y trazo."
+  },
+  "Plomería": {
+   "pct": 3,
+   "nota": "Revisión de puntos."
+  },
+  "Baño": {
+   "pct": 3,
+   "nota": "Trazo de demolición."
+  },
+  "Sala": {
+   "pct": 0,
+   "nota": ""
+  },
+  "Recámara": {
+   "pct": 0,
+   "nota": ""
+  },
+  "Pisos": {
+   "pct": 0,
+   "nota": ""
+  },
+  "Acabados": {
+   "pct": 0,
+   "nota": ""
+  }
+ }
+}

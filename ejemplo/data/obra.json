@@ -1,0 +1,124 @@
+{
+  "_aviso": "Datos de ejemplo; no se publican en el sitio.",
+  "nombre": "Palmas 441",
+  "inicio": "2026-11-02",
+  "fecha_pactada": "2027-02-15",
+  "entrega_estimada": "2027-01-31",
+  "semanas": 13,
+  "plan_acumulado": [
+    0,
+    4,
+    12,
+    24,
+    36,
+    47,
+    57,
+    66,
+    75,
+    83,
+    90,
+    95,
+    98,
+    100
+  ],
+  "areas": [
+    {
+      "nombre": "Instalación eléctrica",
+      "peso": 1
+    },
+    {
+      "nombre": "Cocina",
+      "peso": 1
+    },
+    {
+      "nombre": "Plomería",
+      "peso": 1
+    },
+    {
+      "nombre": "Baño",
+      "peso": 1
+    },
+    {
+      "nombre": "Sala",
+      "peso": 1
+    },
+    {
+      "nombre": "Recámara",
+      "peso": 1
+    },
+    {
+      "nombre": "Pisos",
+      "peso": 1
+    },
+    {
+      "nombre": "Acabados",
+      "peso": 1
+    }
+  ],
+  "especialidades": [
+    {
+      "nombre": "Albañilería",
+      "descripcion": "Muros, nivelación y demolición"
+    },
+    {
+      "nombre": "Electricidad",
+      "descripcion": "Canalización y cableado"
+    },
+    {
+      "nombre": "Plomería",
+      "descripcion": "Puntos de agua y tubería"
+    },
+    {
+      "nombre": "Carpintería",
+      "descripcion": "Medidas de cocina y puertas"
+    },
+    {
+      "nombre": "Ayudantes",
+      "descripcion": "Acarreo, limpieza y apoyo"
+    },
+    {
+      "nombre": "Supervisión",
+      "descripcion": "Coordinación y calidad"
+    }
+  ],
+  "fases": [
+    {
+      "nombre": "Diagnóstico",
+      "semana_inicio": 1,
+      "semana_fin": 1
+    },
+    {
+      "nombre": "Demolición",
+      "semana_inicio": 2,
+      "semana_fin": 3
+    },
+    {
+      "nombre": "Instalaciones",
+      "semana_inicio": 4,
+      "semana_fin": 6
+    },
+    {
+      "nombre": "Albañilería y pisos",
+      "semana_inicio": 7,
+      "semana_fin": 9
+    },
+    {
+      "nombre": "Acabados",
+      "semana_inicio": 10,
+      "semana_fin": 12
+    },
+    {
+      "nombre": "Entrega",
+      "semana_inicio": 13,
+      "semana_fin": 13
+    }
+  ],
+  "personal_planeado_por_dia": [
+    10,
+    10,
+    12,
+    12,
+    10,
+    8
+  ]
+}

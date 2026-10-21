@@ -1,0 +1,46 @@
+{
+ "fecha": "2026-11-14",
+ "resumen": "Jornada de ejemplo.",
+ "personal": {
+  "Albañilería": 1,
+  "Electricidad": 1,
+  "Plomería": 1,
+  "Carpintería": 0,
+  "Ayudantes": 1,
+  "Supervisión": 1
+ },
+ "areas": {
+  "Instalación eléctrica": {
+   "pct": 30,
+   "nota": "Cableado en avance."
+  },
+  "Cocina": {
+   "pct": 25,
+   "nota": "Demolición de muro."
+  },
+  "Plomería": {
+   "pct": 15,
+   "nota": "Ruta de tubería marcada."
+  },
+  "Baño": {
+   "pct": 10,
+   "nota": "Demolición en curso."
+  },
+  "Sala": {
+   "pct": 5,
+   "nota": "Preparación eléctrica."
+  },
+  "Recámara": {
+   "pct": 3,
+   "nota": "Marcado de salidas."
+  },
+  "Pisos": {
+   "pct": 0,
+   "nota": "Espera a instalaciones."
+  },
+  "Acabados": {
+   "pct": 0,
+   "nota": "Última etapa."
+  }
+ }
+}

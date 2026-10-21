@@ -1,0 +1,7 @@
+# Notas originales de Miguel (pueden traer cifras o nombres): NUNCA se publican
+notas-privadas/*
+!notas-privadas/.gitkeep
+.cache/
+__pycache__/
+*.pyc
+.DS_Store

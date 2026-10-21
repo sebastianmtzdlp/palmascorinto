@@ -17,7 +17,7 @@ function esc(s) {
 
 // Solo rutas relativas dentro de media/ o assets/ (evita enlaces externos o javascript:)
 function safePath(p) {
-  return /^(media|assets)\/[^:]*$/.test(p || '') && !p.includes('..') ? encodeURI(p) : '';
+  return /^(media|assets|diario)\/[^:]*$/.test(p || '') && !p.includes('..') ? encodeURI(p) : '';
 }
 
 function formatDate(iso) {
@@ -182,7 +182,26 @@ function renderList() {
     : `<p class="muted">${entries.length ? 'No hay registros con esos filtros.' : 'Aún no hay registros.'}</p>`;
 }
 
+async function loadSite() {
+  // data/site.json lo genera tools/build_report.py; si no existe todavía, se usa project.js
+  try {
+    const res = await fetch('data/site.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const site = await res.json();
+    if (site.startDate) PROJECT.startDate = site.startDate;
+    if (site.targetDate) PROJECT.targetDate = site.targetDate;
+    if (site.phases && site.phases.length) PROJECT.phases = site.phases;
+    if (site.areas && site.areas.length) PROJECT.areas = site.areas;
+    if (site.reports && site.reports.length) PROJECT.reports = site.reports;
+    if (site.sample === false) PROJECT.sample = false;
+  } catch (err) { /* sin datos reales aún */ }
+}
+
 async function loadEntries() {
+  await loadSite();
+  renderLanding();
+  renderReports();
+  renderProject();
   try {
     const res = await fetch('data/entries.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);

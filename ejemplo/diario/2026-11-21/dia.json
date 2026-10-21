@@ -1,0 +1,65 @@
+{
+ "fecha": "2026-11-21",
+ "resumen": "Jornada de ejemplo.",
+ "personal": {
+  "Albañilería": 2,
+  "Electricidad": 1,
+  "Plomería": 1,
+  "Carpintería": 0,
+  "Ayudantes": 2,
+  "Supervisión": 1
+ },
+ "areas": {
+  "Instalación eléctrica": {
+   "pct": 70,
+   "nota": "Cableado casi completo. Falta el tablero."
+  },
+  "Cocina": {
+   "pct": 45,
+   "nota": "Muro retirado, ductos listos. Sigue el piso."
+  },
+  "Plomería": {
+   "pct": 40,
+   "nota": "Tubería nueva en cocina; falta el baño."
+  },
+  "Baño": {
+   "pct": 30,
+   "nota": "Demolición lista. Sigue impermeabilizar."
+  },
+  "Sala": {
+   "pct": 10,
+   "nota": "Preparación eléctrica."
+  },
+  "Recámara": {
+   "pct": 5,
+   "nota": "Marcado de salidas."
+  },
+  "Pisos": {
+   "pct": 0,
+   "nota": "Espera a instalaciones."
+  },
+  "Acabados": {
+   "pct": 0,
+   "nota": "Última etapa."
+  }
+ },
+ "atencion": "La cubierta de cocina necesita tu decisión esta semana.",
+ "proxima": [
+  "Nivelar el piso de la cocina.",
+  "Instalar el tablero eléctrico.",
+  "Impermeabilizar el baño.",
+  "Iniciar plomería del baño."
+ ],
+ "fotos": [
+  {
+   "archivo": "../../../assets/ejemplo/cocina.jpg",
+   "pie": "Cocina · imagen de ejemplo",
+   "area": "Cocina"
+  },
+  {
+   "archivo": "../../../assets/ejemplo/recamara.jpg",
+   "pie": "Recámara · imagen de ejemplo",
+   "area": "Recámara"
+  }
+ ]
+}

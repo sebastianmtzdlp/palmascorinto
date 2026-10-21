@@ -80,13 +80,14 @@ button.ghost {
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
 
-.bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.toolbar h2 { margin: 0; }
 .filters { display: flex; gap: 8px; }
 .filters select { width: auto; }
 
 .bar-row {
   display: grid;
-  grid-template-columns: 140px 1fr 110px;
+  grid-template-columns: 140px 1fr 150px;
   gap: 10px;
   align-items: center;
   margin-bottom: 8px;
@@ -157,3 +158,5 @@ h3 { font-size: .95rem; margin: 18px 0 8px; }
 @media (max-width: 640px) {
   .bar-row { grid-template-columns: 1fr; gap: 4px; }
 }
+
+.file video { width: 260px; max-width: 100%; border-radius: 6px; border: 1px solid var(--border); }

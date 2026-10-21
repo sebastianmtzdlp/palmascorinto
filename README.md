@@ -47,6 +47,11 @@ Todo el texto de la portada, unidades, plan de pago, galería, contacto, áreas 
 Lo que dice "ejemplo" es de relleno. Con `sample: false` desaparece la franja "Vista de ejemplo".
 Las fotos de ejemplo están en `assets/ejemplo/` (de Unsplash, ver `CREDITOS.txt`); reemplázalas por fotos reales.
 
+## Reportes descargables
+
+Sube el PDF a `media/reportes/` y agrégalo a `reports` en `project.js` (título, fecha, descripción y `file`).
+El PDF de ejemplo (`reporte-semanal-ejemplo.pdf`) es un mockup: quítalo o cámbialo cuando haya reportes reales.
+
 ## Privacidad
 
 El repositorio y el sitio son públicos y no hay login. Lo que se suba a `media/` o a `data/` lo puede ver cualquiera que tenga el enlace, y el historial de Git conserva lo que se borre. No subas direcciones exactas, contratos, costos ni datos personales.

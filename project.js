@@ -59,6 +59,18 @@ window.PROJECT = {
     message: 'Quiero información',
   },
 
+  // Reportes descargables. Sube el PDF a media/reportes/ y agrégalo aquí.
+  // sample: true muestra la etiqueta "Ejemplo".
+  reports: [
+    {
+      title: 'Reporte semanal de avance · Semana 3',
+      date: '2026-10-19',
+      description: 'Resumen de avance general, avance por área, fases, actividades y pendientes, con evidencia fotográfica.',
+      file: 'media/reportes/reporte-semanal-ejemplo.pdf',
+      sample: true,
+    },
+  ],
+
   // Áreas que se siguen en la obra. El avance sale del último reporte de cada una.
   areas: ['Cocina', 'Baño', 'Sala', 'Recámara', 'Instalación eléctrica', 'Plomería', 'Pisos', 'Acabados'],
 

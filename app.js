@@ -85,6 +85,24 @@ function renderContact() {
   $('#contact-actions').innerHTML = out.length ? out.join('') : '<p class="muted">Muy pronto compartiremos los datos de contacto.</p>';
 }
 
+function renderReports() {
+  const list = PROJECT.reports || [];
+  $('#reports').innerHTML = list.map((r) => {
+    const path = safePath(r.file);
+    if (!path) return '';
+    const fname = path.split('/').pop();
+    return `<article class="report">
+      <div class="doc-ico" aria-hidden="true">PDF</div>
+      <div class="report-body">
+        <h3>${esc(r.title)} ${r.sample ? '<span class="pill apartado">Ejemplo</span>' : ''}</h3>
+        <p class="meta">${esc(formatDate(r.date))}</p>
+        <p>${esc(r.description)}</p>
+      </div>
+      <a class="btn dl" href="${path}" download="${esc(fname)}">Descargar</a>
+    </article>`;
+  }).join('') || '<p class="muted">Aún no hay reportes disponibles.</p>';
+}
+
 /* ---------- Galería ampliada ---------- */
 const lb = $('#lightbox');
 $('#gallery').addEventListener('click', (e) => {
@@ -183,6 +201,7 @@ el.filterArea.addEventListener('change', renderList);
 el.filterKind.addEventListener('change', renderList);
 
 renderLanding();
+renderReports();
 renderProject();
 renderSummary();
 loadEntries();

@@ -130,3 +130,30 @@ button.ghost {
 
 .error { color: var(--warn); }
 #form-msg, #login-msg { min-height: 1.2em; margin: 0; }
+
+/* Resumen del proyecto */
+.muted { color: var(--muted); margin: 0 0 12px; }
+h3 { font-size: .95rem; margin: 18px 0 8px; }
+
+.overall { display: flex; gap: 16px; align-items: center; margin: 8px 0; }
+.overall-num { display: grid; text-align: center; min-width: 90px; }
+.overall-num span { font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.overall-num small { color: var(--muted); font-size: .75rem; margin-top: 4px; }
+.overall-info { flex: 1; }
+.overall-info p { margin: 8px 0 0; font-size: .9rem; }
+.bar.big { height: 14px; }
+
+.phases { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.phase {
+  display: flex; justify-content: space-between; gap: 10px;
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px;
+  border-left-width: 4px; font-size: .92rem;
+}
+.phase em { font-style: normal; font-size: .8rem; color: var(--muted); }
+.phase.todo  { border-left-color: var(--border); }
+.phase.doing { border-left-color: #c9962b; background: #fbf5e4; }
+.phase.done  { border-left-color: var(--accent); background: var(--accent-soft); }
+
+@media (max-width: 640px) {
+  .bar-row { grid-template-columns: 1fr; gap: 4px; }
+}

@@ -95,7 +95,33 @@ function renderAreaFilter() {
   el.filterArea.value = areas.includes(current) ? current : '';
 }
 
-// Último reporte de cada área (entries ya viene ordenado de más reciente a más antiguo)
+const PROJECT = window.PROJECT || { name: 'Proyecto', areas: [], phases: [] };
+
+function formatDate(iso) {
+  if (!iso) return '';
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('es-MX', {
+    day: 'numeric', month: 'short', year: 'numeric',
+  });
+}
+
+function renderProject() {
+  $('#project-name').textContent = PROJECT.name || 'Proyecto';
+  $('#project-desc').textContent = PROJECT.description || '';
+  $('#project-dates').textContent =
+    PROJECT.startDate && PROJECT.targetDate
+      ? `Inicio ${formatDate(PROJECT.startDate)} · Entrega estimada ${formatDate(PROJECT.targetDate)}`
+      : '';
+
+  const labels = { pendiente: 'Pendiente', 'en curso': 'En curso', terminada: 'Terminada' };
+  $('#phases').innerHTML = (PROJECT.phases || []).map((p) => {
+    const cls = p.status === 'terminada' ? 'done' : p.status === 'en curso' ? 'doing' : 'todo';
+    return `<li class="phase ${cls}"><span>${esc(p.name)}</span><em>${esc(labels[p.status] || p.status)}</em></li>`;
+  }).join('');
+}
+
+// Último reporte de cada área (entries ya viene ordenado de más reciente a más antiguo).
+// Las áreas definidas en project.js aparecen siempre, aunque aún no tengan reporte.
 function renderSummary() {
   const latest = {};
   for (const e of entries) {
@@ -103,15 +129,25 @@ function renderSummary() {
       latest[e.area] = e;
     }
   }
-  const rows = Object.values(latest);
-  el.summary.innerHTML = rows.length
-    ? rows.map((e) => `
+
+  const names = [...new Set([...(PROJECT.areas || []), ...Object.keys(latest)])];
+  const pcts = names.map((n) => (latest[n] ? latest[n].progress_pct : 0));
+  const overall = pcts.length ? Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length) : 0;
+
+  $('#overall-pct').textContent = `${overall}%`;
+  $('#overall-bar').style.width = `${overall}%`;
+
+  el.summary.innerHTML = names.length
+    ? names.map((n) => {
+        const e = latest[n];
+        return `
         <div class="bar-row">
-          <span class="bar-label">${esc(e.area)}</span>
-          <div class="bar"><div style="width:${e.progress_pct}%"></div></div>
-          <span class="bar-value">${e.progress_pct}% <small>(${esc(e.taken_on)})</small></span>
-        </div>`).join('')
-    : '<p>Aún no hay reportes de avance.</p>';
+          <span class="bar-label">${esc(n)}</span>
+          <div class="bar"><div style="width:${e ? e.progress_pct : 0}%"></div></div>
+          <span class="bar-value">${e ? `${e.progress_pct}% <small>(${esc(e.taken_on)})</small>` : '<small>sin reporte</small>'}</span>
+        </div>`;
+      }).join('')
+    : '<p>Aún no hay áreas ni reportes de avance.</p>';
 }
 
 function card(e) {
@@ -225,4 +261,5 @@ el.form.addEventListener('submit', async (e) => {
   }
 });
 
+renderProject();
 showView();

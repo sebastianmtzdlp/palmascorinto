@@ -33,7 +33,18 @@
       </div>
 
       <section class="panel">
-        <h2>Avance por área</h2>
+        <h2 id="project-name">Proyecto</h2>
+        <p id="project-desc" class="muted"></p>
+        <div class="overall">
+          <div class="overall-num"><span id="overall-pct">0%</span><small>avance general</small></div>
+          <div class="overall-info">
+            <div class="bar big"><div id="overall-bar" style="width:0%"></div></div>
+            <p id="project-dates" class="muted"></p>
+          </div>
+        </div>
+        <h3>Fases</h3>
+        <ol id="phases" class="phases"></ol>
+        <h3>Avance por área</h3>
         <div id="summary"></div>
       </section>
 
@@ -108,6 +119,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
+  <script src="project.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

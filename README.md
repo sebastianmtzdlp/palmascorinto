@@ -54,6 +54,8 @@ El PDF de ejemplo (`reporte-semanal-ejemplo.pdf`) es un mockup: quítalo o cámb
 
 ## Privacidad
 
+Para que no salga en buscadores el sitio tiene `noindex` en `index.html` y un `robots.txt` que bloquea a todos los rastreadores. Esto evita que aparezca en Google, pero **no es una protección**: cualquiera con el enlace puede abrirlo.
+
 El repositorio y el sitio son públicos y no hay login. Lo que se suba a `media/` o a `data/` lo puede ver cualquiera que tenga el enlace, y el historial de Git conserva lo que se borre. No subas direcciones exactas, contratos, costos ni datos personales.
 
 ## Publicación y DNS
